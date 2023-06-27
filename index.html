@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js" integrity="sha256-2Pjr1OlpZMY6qesJM68t2v39t+lMLvxwpa8QlRjJroA=" crossorigin="anonymous"></script>
+  <style>
+    .full-screen {
+      min-height: 100vh;
+      overflow-x: hidden; /* Hide horizontal scrollbar */
+    }
+
+    .zoom-image {
+      animation: zoomInOut 5s infinite alternate;
+    }
+
+    @keyframes zoomInOut {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  </style>
+  <script>
+    setTimeout(function () {
+      const heading = document.querySelector('.animate__animated');
+
+      heading.classList.remove('animate__animated', 'animate__fadeInUp');
+    }, 40000);
+  </script>
+</head>
+
+<body>
+  <div class="flex flex-col full-screen">
+    <div class="flex-grow md:flex">
+      <div class="w-full md:w-1/2 bg-gradient-to-b from-orange-100 to-orange-600 text-white text-center p-8 flex flex-col justify-center">
+        <img src="gradlogo2.png" alt="Logo" class="mx-auto mb-4 w-48">
+        <h1 class="text-4xl md:text-6xl font-bold mb-8 animate__animated animate__fadeInUp" style="animation-duration: 2s;">FREE<br> 15 DAYS <br>TRIAL</h1>
+
+
+
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLSfODLzfL4-p9_3v9ThMWZtAMe4Hocm1mBC-fhLpFKswjeMMNg/formResponse" target="_self" id="bootstrapForm" method="POST"class="w-full max-w-sm mx-auto">
+          <div class="mb-4">
+            <label for="businessName" class="block text-gray-100 text-sm font-bold mb-2">Business Name:</label>
+            <input   type="text" id="businessName" name="entry.981243530" placeholder="Business Name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+          </div>
+          <div class="mb-4">
+            <label for="whatsappNumber" class="block text-gray-100 text-sm font-bold mb-2">WhatsApp Number:</label>
+            <input type="tel" id="phoneNumber" name="entry.481489451"  class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Phone Number">
+          </div>
+          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" >
+            Submit
+          </button>
+        </form>
+
+
+
+
+      </div>
+      <div class="w-full md:w-1/2 bg-gray-200">
+        <img src="shocked12.jpeg" alt="Random Image" class="h-full w-full object-cover zoom-image">
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.js"></script>
+  <script>
+    const heading = document.querySelector('.animate__animated');
+
+    heading.addEventListener('animationend', () => {
+      heading.classList.remove('animate__animated', 'animate__fadeInUp');
+    });
+  </script>
+    <script>
+        $(document).ready(function() {
+          $('#bootstrapForm').submit(function(event) {
+            event.preventDefault();
+            var extraData = {};
+            $('#bootstrapForm').ajaxSubmit({
+              data: extraData,
+              dataType: 'jsonp',
+              error: function() {
+                alert('Form Submitted. Thanks.');
+                window.location.href = 'http://www.grandeurnet.com';
+              }
+            });
+          });
+        });
+      </script>
+</body>
+
+</html>
